@@ -18,7 +18,7 @@ export const firebaseConfig = {
 };
 
 export const ADMIN_EMAILS = ['rfvlog2505701@gmail.com']; // UI gating only — real authority is in database.rules.json
-export const RECAPTCHA_SITE_KEY = 'PUT_YOUR_RECAPTCHA_V3_SITE_KEY_HERE'; // public key, safe to ship
+export const RECAPTCHA_SITE_KEY = '6LeXnBYuAAAAABpvhd0g9DP066zpKdoRKURIw_Ay'; // public key, safe to ship
 export const FREE_QUOTA = 10 * 1024 ** 3;
 export const MAX_FILE = 200 * 1024 ** 2;
 export const GB = 1024 ** 3;
