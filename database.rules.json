@@ -1,0 +1,59 @@
+{
+  "rules": {
+    ".read": false,
+    ".write": false,
+
+    "users": {
+      "$uid": {
+        ".read": "auth != null && (auth.uid === $uid || auth.token.email === 'rfvlog2505701@gmail.com')",
+        "profile": {
+          ".write": "auth != null && auth.uid === $uid"
+        },
+        "preferences": {
+          ".write": "auth != null && auth.uid === $uid"
+        },
+        "admin": {
+          ".write": "auth != null && auth.token.email === 'rfvlog2505701@gmail.com'"
+        }
+      }
+    },
+
+    "userFiles": {
+      "$uid": {
+        ".read": "auth != null && (auth.uid === $uid || auth.token.email === 'rfvlog2505701@gmail.com')",
+        ".write": "auth != null && auth.uid === $uid"
+      }
+    },
+
+    "userFolders": {
+      "$uid": {
+        ".read": "auth != null && auth.uid === $uid",
+        ".write": "auth != null && auth.uid === $uid"
+      }
+    },
+
+    "userActivity": {
+      "$uid": {
+        ".read": "auth != null && auth.uid === $uid",
+        ".write": "auth != null && auth.uid === $uid"
+      }
+    },
+
+    "emailIndex": {
+      "$key": {
+        ".read": "auth != null && auth.token.email === 'rfvlog2505701@gmail.com'",
+        ".write": "auth != null && !data.exists() && newData.val() === auth.uid"
+      }
+    },
+
+    "publishedFiles": {
+      ".read": true,
+      ".write": false
+    },
+
+    "uploadTokens": {
+      ".read": false,
+      ".write": false
+    }
+  }
+}
