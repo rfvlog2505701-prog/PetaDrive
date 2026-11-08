@@ -40,7 +40,8 @@ function render(f) {
 }
 
 async function init() {
-  const id = new URLSearchParams(location.search).get('id');
+  const fromPath = location.pathname.match(/\/d\/([^/]+)\/?$/);
+  const id = (fromPath && fromPath[1]) || new URLSearchParams(location.search).get('id');
   if (!id) return render(null);
   try { const snap = await get(ref(db, `publishedFiles/${id}`)); render(snap.exists() ? snap.val() : null); }
   catch (e) { render(null); }
