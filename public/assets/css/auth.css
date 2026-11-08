@@ -1,5 +1,5 @@
 body.auth-body{overflow-x:hidden}
-.auth-wrap{position:relative;min-height:100vh;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(360px,.9fr)}
+.auth-wrap{position:relative;min-height:100vh;display:grid;grid-template-columns:1fr}
 .auth-art{padding:6vw;display:none;flex-direction:column;justify-content:center;background:linear-gradient(135deg,var(--soft),var(--bg))}
 .auth-art h1{font-size:clamp(30px,4vw,52px);line-height:1.05;letter-spacing:-1.6px;margin:28px 0 14px;font-weight:800}
 .auth-art p{color:var(--muted);max-width:440px;line-height:1.7}
@@ -11,4 +11,4 @@ body.auth-body{overflow-x:hidden}
 .auth-switch a{color:var(--p);font-weight:700}
 .err-box{background:#fef2f2;color:var(--bad);border-radius:11px;padding:10px 13px;font-size:13px;margin-bottom:14px}
 [data-theme="dark"] .err-box{background:#3a1420}
-@media (min-width:860px){.auth-art{display:flex}}
+@media (min-width:860px){.auth-art{display:flex}.auth-wrap{grid-template-columns:minmax(0,1.1fr) minmax(380px,.9fr)}}
