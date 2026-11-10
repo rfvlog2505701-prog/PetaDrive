@@ -1,0 +1,24 @@
+body.dl-body{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px;position:relative;overflow:hidden}
+#dl-canvas{position:fixed;inset:0;z-index:0;pointer-events:none}
+#root{position:relative;z-index:1;width:100%;max-width:520px}
+.dl-card{background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:clamp(24px,5vw,36px);box-shadow:var(--shadow);animation:dlIn .3s cubic-bezier(.34,1.56,.64,1)}
+@keyframes dlIn{from{transform:translateY(20px) scale(.96);opacity:0}to{transform:none;opacity:1}}
+.dl-brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:16px;margin-bottom:24px;color:var(--muted)}
+.dl-brand img{width:28px;height:28px;border-radius:8px;object-fit:cover}
+.dl-thumb{width:60px;height:60px;border-radius:18px;background:linear-gradient(135deg,var(--c1,var(--p)),var(--c2,var(--p2)));display:grid;place-items:center;color:#fff;margin-bottom:16px;box-shadow:0 8px 20px -6px var(--c1,var(--p))}
+.dl-thumb .ico{width:52%;height:52%}
+.dl-name{font-size:clamp(16px,3vw,20px);font-weight:800;margin:0 0 6px;word-break:break-all;letter-spacing:-.4px}
+.dl-meta{color:var(--muted);font-size:13px;margin-bottom:24px}
+.dl-links{display:flex;flex-direction:column;gap:10px;margin-bottom:20px}
+.dl-btn{display:flex;align-items:center;justify-content:center;gap:10px;border-radius:14px;padding:14px 20px;font-weight:700;font-size:15px;border:0;cursor:pointer;transition:transform .14s,box-shadow .14s;text-decoration:none}
+.dl-btn:active{transform:scale(.96)}
+.dl-btn-primary{background:linear-gradient(135deg,var(--p),var(--p2));color:#fff;box-shadow:var(--shadow-s)}
+.dl-btn-primary:hover{box-shadow:0 10px 28px -8px rgba(99,102,241,.55)}
+.dl-btn-secondary{background:var(--soft);color:var(--text);border:1px solid var(--border)}
+.dl-btn-secondary:hover{border-color:var(--p);color:var(--p)}
+.dl-preview{margin-top:20px;border-radius:14px;overflow:hidden;border:1px solid var(--border)}
+.dl-preview img,.dl-preview video{width:100%;display:block;border-radius:14px}
+.dl-preview audio{width:100%;display:block;padding:10px 0}
+.dl-err{text-align:center;padding:40px 20px}
+.dl-err h2{margin:16px 0 8px;font-size:22px}
+.dl-err p{color:var(--muted)}

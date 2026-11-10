@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<meta name="theme-color" content="#6366f1" />
+<title>Sign in — PetaDrive</title>
+<link rel="icon" href="/assets/logo.jpg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/assets/css/base.css" />
+<link rel="stylesheet" href="/assets/css/auth.css" />
+</head>
+<body class="auth-body">
+<canvas id="auth-canvas"></canvas>
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+<div class="orb orb-3"></div>
+
+<div class="auth-wrap">
+  <!-- Art panel (desktop only) -->
+  <div class="auth-art">
+    <div class="brand">
+      <img src="/assets/logo.jpg" alt="" />
+      <span>PetaDrive</span>
+    </div>
+    <div>
+      <div class="art-icons">
+        <div class="art-icon">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+        </div>
+        <div class="art-icon" style="color:var(--p2)">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V4M7 9l5-5 5 5"/><path d="M4 16v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></svg>
+        </div>
+        <div class="art-icon" style="color:var(--p3)">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 10.5 6.8-4M8.6 13.5l6.8 4"/></svg>
+        </div>
+        <div class="art-icon" style="color:#10b981">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 17H7a5 5 0 0 1 0-10h2M15 7h2a5 5 0 0 1 0 10h-2M8 12h8"/></svg>
+        </div>
+      </div>
+      <h1>Your Files.<br>Your Cloud.<br>Your Way.</h1>
+      <p>One secure place for every file — upload, organize and share with links that live on your own domain.</p>
+    </div>
+    <span class="muted small">&copy; <span id="yearNow"></span> PetaDrive</span>
+  </div>
+
+  <!-- Form panel -->
+  <div class="auth-form-wrap">
+    <form class="auth-form" id="loginForm" autocomplete="on">
+      <div class="brand" style="margin-bottom:4px">
+        <img src="/assets/logo.jpg" alt="" />
+        <span>PetaDrive</span>
+      </div>
+      <h2>Welcome back</h2>
+      <p class="sub">Sign in to your cloud.</p>
+      <div class="err-box hidden" id="errBox"></div>
+      <div class="field">
+        <label for="loginEmail">Email</label>
+        <input id="loginEmail" type="email" required autocomplete="email" placeholder="you@example.com" />
+      </div>
+      <div class="field">
+        <label for="loginPass">Password</label>
+        <input id="loginPass" type="password" required autocomplete="current-password" placeholder="••••••••" />
+      </div>
+      <button class="btn btn-primary" type="submit" style="width:100%;justify-content:center;margin-top:4px">
+        <svg class="ico ico-anim" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5M15 12H3"/></svg>
+        Sign in
+      </button>
+      <div class="hidden" id="resendWrap" style="margin-top:12px;text-align:center">
+        <button type="button" class="btn btn-plain btn-sm" id="resendBtn">Resend verification email</button>
+      </div>
+      <div style="text-align:center;margin-top:10px">
+        <button type="button" class="btn btn-plain btn-sm" id="forgotBtn">Forgot password?</button>
+      </div>
+      <p class="auth-switch">New to PetaDrive? <a href="/auth/register.html">Create an account</a></p>
+    </form>
+  </div>
+</div>
+
+<div class="toast-host" id="toastHost"></div>
+<script type="module">
+  import { wireLoginForm } from '/assets/js/auth.js';
+  import { startParticles, initTheme } from '/assets/js/ui.js';
+  initTheme();
+  startParticles('auth-canvas');
+  wireLoginForm();
+  document.getElementById('yearNow').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
